@@ -1,0 +1,18 @@
+name: Test Github Action
+author: ahsayde
+description: 'test github actions'
+inputs:
+  path:
+    description: file path
+    default: '.'
+    required: false
+
+branding:
+  icon: 'shield'
+  color: 'purple'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.directory }}

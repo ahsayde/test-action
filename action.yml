@@ -2,7 +2,7 @@ name: Test Github Action
 author: ahsayde
 description: 'test github actions'
 inputs:
-  path:
+  directory:
     description: file path
     default: '.'
     required: false

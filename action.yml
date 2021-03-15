@@ -10,7 +10,19 @@ inputs:
     description: root directory
     default: '.'
     required: false
+
+  github-token:
+    default: ${{ github.token }}
+
+  repo:
+    default: ${{ github.repository }}
   
+  branch:
+    default: ${{ github.ref }}
+  
+  commit:
+    default: ${{ github.sha }}
+
 branding:
   icon: shield
   color: purple
@@ -23,3 +35,11 @@ runs:
     - ${{ inputs.webhook }}
     - --directory
     - ${{ inputs.directory }}
+    - --repo
+    - ${{ inputs.repo }}
+    - --branch
+    - ${{ inputs.branch }}
+    - --commit
+    - ${{ inputs.commit }}
+    - --github-token
+    - ${{ inputs.github-token }}

@@ -19,9 +19,13 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - --webhook ${{ inputs.webhook }}
-    - --directory ${{ inputs.directory }}
-    - --repo $GITHUB_REPOSITORY
-    - --branch $GITHUB_REF
-    - --commit $GITHUB_SHA
-
+    - --webhook
+    - ${{ inputs.webhook }}
+    - --directory
+    - ${{ inputs.directory }}
+    - --repo
+    - $GITHUB_REPOSITORY
+    - --branch
+    - $GITHUB_REF
+    - --commit
+    - $GITHUB_SHA

@@ -12,8 +12,8 @@ inputs:
     required: false
   
 branding:
-  icon: 'shield'
-  color: 'purple'
+  icon: shield
+  color: purple
 
 runs:
   using: 'docker'
@@ -29,3 +29,4 @@ runs:
     - $GITHUB_REF
     - --commit
     - $GITHUB_SHA
+    - --github-check-runs

@@ -1,2 +1,3 @@
-FROM alpine:3.7
-ENTRYPOINT ["echo"]
+FROM ahsayde/mglx-test:latest
+
+ENTRYPOINT ["/bin/app"]

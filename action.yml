@@ -2,11 +2,15 @@ name: Test Github Action
 author: ahsayde
 description: 'test github actions'
 inputs:
+  webhook:
+    description: magalix guard webhook
+    required: true
+  
   directory:
-    description: file path
+    description: root directory
     default: '.'
     required: false
-
+  
 branding:
   icon: 'shield'
   color: 'purple'
@@ -15,4 +19,10 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.directory }}
+    - --webhook ${{ inputs.webhook }}
+    - --directory ${{ inputs.directory }}
+    - --github-token ${{ secrets.GITHUB_TOKEN }}
+    - --repo ${{ env.GITHUB_REPOSITORY }}
+    - --branch ${{ env.GITHUB_REF }}
+    - --commit ${{ env.GITHUB_SHA }}
+

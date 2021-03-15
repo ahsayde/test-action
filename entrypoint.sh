@@ -1,1 +1,0 @@
-echo "Printing ${1}"

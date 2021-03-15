@@ -21,8 +21,7 @@ runs:
   args:
     - --webhook ${{ inputs.webhook }}
     - --directory ${{ inputs.directory }}
-    - --github-token ${{ secrets.GITHUB_TOKEN }}
-    - --repo ${{ env.GITHUB_REPOSITORY }}
-    - --branch ${{ env.GITHUB_REF }}
-    - --commit ${{ env.GITHUB_SHA }}
+    - --repo $GITHUB_REPOSITORY
+    - --branch $GITHUB_REF
+    - --commit $GITHUB_SHA
 

@@ -10,6 +10,9 @@ inputs:
     description: root directory
     default: '.'
     required: false
+    
+  github-token:
+    default: ${{ github.token }}
   
 branding:
   icon: shield
@@ -23,3 +26,5 @@ runs:
     - ${{ inputs.webhook }}
     - --directory
     - ${{ inputs.directory }}
+    - --github-token
+    - ${{ inputs.github-token }}

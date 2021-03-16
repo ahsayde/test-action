@@ -11,6 +11,10 @@ inputs:
     default: '.'
     required: false
 
+  github-code-scanning:
+    description: enable github code scanning
+    default: true
+
   github-token:
     default: ${{ github.token }}
 
@@ -43,3 +47,5 @@ runs:
     - ${{ inputs.commit }}
     - --github-token
     - ${{ inputs.github-token }}
+    - --github-code-scanning
+    - ${{ inputs.github-code-scanning }}

@@ -1,2 +1,2 @@
 FROM ahsayde/mglx-test:latest
-ENTRYPOINT ["./mglx-scanner"]
+ENTRYPOINT ["mglx-scanner"]

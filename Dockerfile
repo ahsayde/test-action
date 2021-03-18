@@ -1,3 +1,2 @@
 FROM ahsayde/mglx-test:latest
-
-ENTRYPOINT ["/bin/app"]
+ENTRYPOINT ["./mglx-scanner"]

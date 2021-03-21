@@ -20,10 +20,6 @@ inputs:
   commit:
     default: ${{ github.sha }}
 
-  gh-api-url:
-    description: github api url
-    default: ${{ env.GITHUB_API_URL }}
-  
   gh-token:
     default: ${{ github.token }}
 
@@ -53,8 +49,6 @@ runs:
     - ${{ inputs.branch }}
     - --commit
     - ${{ inputs.commit }}
-    - --gh-api-url
-    - ${{ inputs.gh-api-url }}
     - --gh-token
     - ${{ inputs.gh-token }}
     - --gh-code-scanning

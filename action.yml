@@ -23,14 +23,6 @@ inputs:
   gh-token:
     default: ${{ github.token }}
 
-  gh-checkrun-report:
-    description: create check-run to show result summary 
-    default: true
-
-  gh-code-scanning:
-    description: enable github code scanning
-    default: true
-
 branding:
   icon: shield
   color: purple
@@ -52,6 +44,4 @@ runs:
     - --gh-token
     - ${{ inputs.gh-token }}
     - --gh-code-scanning
-    - ${{ inputs.gh-code-scanning }}
-    - --gh-checkrun-report
-    - ${{ inputs.gh-checkrun-report }}
+ 

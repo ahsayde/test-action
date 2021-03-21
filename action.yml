@@ -11,13 +11,6 @@ inputs:
     default: '.'
     required: false
 
-  github-code-scanning:
-    description: enable github code scanning
-    default: true
-
-  github-token:
-    default: ${{ github.token }}
-
   repo:
     default: ${{ github.repository }}
   
@@ -26,6 +19,21 @@ inputs:
   
   commit:
     default: ${{ github.sha }}
+
+  gh-api-url:
+    description: github api url
+    default: ${{ env.GITHUB_API_URL }}
+  
+  gh-token:
+    default: ${{ github.token }}
+
+  gh-checkrun-report:
+    description: create check-run to show result summary 
+    default: true
+
+  gh-code-scanning:
+    description: enable github code scanning
+    default: true
 
 branding:
   icon: shield
@@ -45,7 +53,11 @@ runs:
     - ${{ inputs.branch }}
     - --commit
     - ${{ inputs.commit }}
-    - --github-token
-    - ${{ inputs.github-token }}
-    - --github-code-scanning
-    - ${{ inputs.github-code-scanning }}
+    - --gh-api-url
+    - ${{ inputs.gh-api-url }}
+    - --gh-token
+    - ${{ inputs.gh-token }}
+    - --gh-code-scanning
+    - ${{ inputs.gh-code-scanning }}
+    - --gh-checkrun-report
+    - ${{ inputs.gh-checkrun-report }}
